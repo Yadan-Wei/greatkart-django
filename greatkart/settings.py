@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,6 +32,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+
+sys.modules['fontawesome_free'] = __import__('fontawesome-free')
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,6 +47,7 @@ INSTALLED_APPS = [
     'store',
     'carts',
     'orders',
+    'fontawesome_free',
 ]
 
 MIDDLEWARE = [
@@ -124,10 +130,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    'greatkart/static',
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 # media files config
