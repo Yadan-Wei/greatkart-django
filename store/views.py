@@ -1,10 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
-<<<<<<< HEAD
+
 from .models import ReviewRating, ProductGallery
 from orders.models import OrderProduct
-=======
->>>>>>> parent of 4838ead ("Complete reviews")
+
 
 
 from carts.models import CartItem
@@ -51,7 +50,7 @@ def product_detail(request, category_slug, product_slug):
     except Exception as e:
         raise e
 
-<<<<<<< HEAD
+
     if request.user.is_authenticated:
         try:
             orderproduct = OrderProduct.objects.filter(user=request.user, product_id=single_product.id).exists()
@@ -70,11 +69,9 @@ def product_detail(request, category_slug, product_slug):
         'orderproduct': orderproduct,
         'reviews': reviews,
         'product_gallery': product_gallery,
-=======
-    context = {
         'single_product': single_product,
         'in_cart': in_cart,
->>>>>>> parent of 4838ead ("Complete reviews")
+
     }
     return render(request, 'store/product_detail.html', context)
 

@@ -11,12 +11,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-<<<<<<< HEAD
 import os
 import sys
 from decouple import config
-=======
->>>>>>> parent of 4838ead ("Complete reviews")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = ["greatkart-course-env.eba-3mpwudy3.us-west-2.elasticbeanstalk.com"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -48,11 +45,7 @@ INSTALLED_APPS = [
     'store',
     'carts',
     'orders',
-<<<<<<< HEAD
-    'fontawesome_free',
     'admin_honeypot'
-=======
->>>>>>> parent of 4838ead ("Complete reviews")
 ]
 
 MIDDLEWARE = [
